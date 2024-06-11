@@ -19,6 +19,7 @@ const Signup = () => {
             Firebase.signupWithEmailAndPassword(email,password)
             Firebase.putData('users/'+ "saadAnsari" , {email, password})
         }} >Signup</button>
+        <button onClick={()=>{Firebase.signUpWithGoogle()}} >Signup with google</button>
         </div>
     )
 }

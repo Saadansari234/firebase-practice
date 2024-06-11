@@ -1,36 +1,26 @@
-// import React from 'react'
-// import { useState } from 'react'
-// import { app } from '../firebase'
-// import { getAuth, signInWithEmailAndPassword } from "firebase/auth"
+import React from 'react'
+import { useState } from 'react'
+import { useFirebase } from '../context/Firebase'
 
-// const Auth = getAuth(app)
+const Signin = () => {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const Firebase=useFirebase()
+    
 
-// const Signin = () => {
-//     const [email, setEmail] = useState("")
-//     const [password, setPassword] = useState("")
+    return (
+        <div>
+            <label htmlFor="email">Email</label>
+            <input type="text" placeholder='enter email' value={email} onChange={(e) => setEmail(e.target.value)} />
 
-//     const SigninUser = () => {
-//         signInWithEmailAndPassword(
-//             Auth,
-//             email,
-//             password,
-//         )
-//         .then(value => alert("signIn sucessfully"))
-//         .catch(error => console.log(error))
-//     }
+            <label htmlFor="password">Password</label>
+            <input type="text" placeholder='enter password' value={password} onChange={(e) => setPassword(e.target.value)} />
 
+            <button onClick={
+                ()=>{Firebase.SigninWithEmailAndPassword(email,password)}
+            } >Signin</button>
+        </div>
+    )
+}
 
-//     return (
-//         <div>
-//             <label htmlFor="email">Email</label>
-//             <input type="text" placeholder='enter email' value={email} onChange={(e) => setEmail(e.target.value)} />
-
-//             <label htmlFor="email">Password</label>
-//             <input type="text" placeholder='enter password' value={password} onChange={(e) => setPassword(e.target.value)} />
-
-//             <button onClick={SigninUser} >Signin</button>
-//         </div>
-//     )
-// }
-
-// export default Signin
+export default Signin
