@@ -10,7 +10,7 @@ const firebaseConfig = {
     storageBucket: "project-c1bed.appspot.com",
     messagingSenderId: "219931847816",
     appId: "1:219931847816:web:582bc72b2157b7da79433d",
-    databaseURL: "https://project-c1bed-default-rtdb.firebaseio.com/"
+    databaseURL: "https://project-c1bed-default-rtdb.firebaseio.com/"//important thing to put before getting data from firebase
 };
 
 const FirebaseApp = initializeApp(firebaseConfig)
